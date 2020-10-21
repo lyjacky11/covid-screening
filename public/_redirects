@@ -3,6 +3,9 @@
 # Redirect default Netlify subdomain to primary domain
 https://covid-screening.netlify.app/* https://covid-app.jackyly.ca/:splat 301!
 
+# Support for client-side routing
+/*  /index.html  200
+
 # Internal redirects
 
 # External redirects
