@@ -1,0 +1,9 @@
+.questionContainer {
+    text-align: center;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+.question {
+    font-size: 1.5rem;
+}
