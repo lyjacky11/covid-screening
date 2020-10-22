@@ -13,8 +13,8 @@ class Question extends Component {
                     </p>
                     <p className="question">
                         {questions.question}
-                    </p>      
-                </div>          
+                    </p>
+                </div>
             </div>
         );
     }

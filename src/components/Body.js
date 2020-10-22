@@ -10,17 +10,22 @@ class Body extends Component {
 			currentQuestion : 0,
 			questions       : [
 				{
-					num: "Question 1:",
+					num: null,
+					question : null,
+					response : null
+				},
+				{
+					num: "Question 1 of 3:",
 					question : "Do you have any of the following new or worsening symptoms: Fever, Cough, Difficulty breathing, Sore throat, Loss of taste or smell, Nausea, vomiting or diarrhea?",
 					response : null
 				},
 				{
-					num: "Question 2:",
+					num: "Question 2 of 3:",
 					question : "Have you been in close contact with someone who is confirmed COVID-19 or probable (symptoms + exposure) in the past 14 days without wearing appropriate PPE?",
 					response : null
 				},
 				{
-					num: "Question 3:",
+					num: "Question 3 of 3:",
 					question: "Have you returned from travel outside Canada in the past 14 days?",
 					response: null
 				}
@@ -33,7 +38,7 @@ class Body extends Component {
 		this.setState(this.initialState);
 	}
 
-	nextQuestion (event) {
+	nextQuestion = (event) => {
 		const { currentQuestion, questions } = this.state;
 		const numQuestions = questions.length;
 		const userResponse = event.target.value;
@@ -58,7 +63,17 @@ class Body extends Component {
 	render () {
 		const { currentQuestion, questions } = this.state;
 		const numQuestions = questions.length;
-		if (currentQuestion < numQuestions) {
+		if (currentQuestion === 0) {
+			return (
+				<div className="body">
+					<Question questions={{num: "Welcome to the COVID Screening App!", question: "You will be asked a series of questions. Answer \"Yes\" or \"No\" to each question."}} />
+					<div className="responseBtns">
+						<button value="Next" onClick={this.nextQuestion}>Next</button>
+					</div>
+				</div>
+			);
+		}
+		else if (currentQuestion < numQuestions) {
 			return (
 				<div className="body">
 					<Question questions={questions[currentQuestion]} />
