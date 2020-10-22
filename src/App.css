@@ -5,11 +5,12 @@ body {
 .logoContainer {
 	display: flex;
 	align-items: center;
-	justify-content: center;
+    justify-content: center;
 }
 
 .logo {
-	height: 200px;
+    height: 200px;
+    margin: 2rem;
 }
 
 @media screen and (max-width: 768px) {

@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+
 import "./Body.css";
 import Question from "./Question.js";
 import ResponseBtns from "./ResponseBtns.js";
@@ -84,7 +87,9 @@ class Body extends Component {
 		else if (this.hasCOVID()) {
 			return (
 				<div className="body">
-					<Question questions={{num: "Result:", question: "You have possibly contracted COVID-19! Please visit a local testing centre!"}} />
+					<FontAwesomeIcon icon={faTimesCircle} size="6x" color="red" />
+					<Question questions={{num: "Result:", question: "You may have possibly come in contact with COVID-19. Please visit a local testing centre as soon as possible!"}} />
+					
 					<div className="responseBtns">
 						<button value="Restart" onClick={this.resetState}>Restart</button>
 					</div>
@@ -94,7 +99,9 @@ class Body extends Component {
 		else if (!this.hasCOVID()) {
 			return (
 				<div className="body">
-					<Question questions={{num: "Result:", question: "Congratulations! You do not appear to have symptoms of COVID!"}} />
+					<FontAwesomeIcon icon={faCheckCircle} size="6x" color="green" />
+					<Question questions={{num: "Result:", question: "You don't appear to have symptoms of COVID-19. Please continue to wear a face mask and maintain social distancing!"}} />
+					
 					<div className="responseBtns">
 						<button value="Restart" onClick={this.resetState}>Restart</button>
 					</div>
