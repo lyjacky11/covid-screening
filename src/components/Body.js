@@ -13,8 +13,8 @@ class Body extends Component {
 			currentQuestion : 0,
 			questions       : [
 				{
-					num: null,
-					question : null,
+					num: "Welcome to the COVID Screening App!",
+					question : "You will be asked a series of questions. Click \"Next\" to continue.",
 					response : null
 				},
 				{
@@ -41,6 +41,15 @@ class Body extends Component {
 		this.setState(this.initialState);
 	}
 
+	prevQuestion = () => {
+		const { currentQuestion, questions } = this.state;
+		const numQuestions = questions.length;
+
+		if (currentQuestion < numQuestions) {
+			this.setState( { currentQuestion: currentQuestion - 1 } );
+		}
+	}
+
 	nextQuestion = (event) => {
 		const { currentQuestion, questions } = this.state;
 		const numQuestions = questions.length;
@@ -51,6 +60,7 @@ class Body extends Component {
 			questionsList[currentQuestion].response = userResponse;
 			this.setState( {questions: questionsList} );
 			this.setState( { currentQuestion: currentQuestion + 1 } );
+			// console.log(questions);
 		}
 	}
 
@@ -69,7 +79,7 @@ class Body extends Component {
 		if (currentQuestion === 0) {
 			return (
 				<div className="body">
-					<Question questions={{num: "Welcome to the COVID Screening App!", question: "You will be asked a series of questions. Answer \"Yes\" or \"No\" to each question."}} />
+					<Question questions={questions[currentQuestion]} />
 					<div className="responseBtns">
 						<button value="Next" onClick={this.nextQuestion}>Next</button>
 					</div>
@@ -80,7 +90,7 @@ class Body extends Component {
 			return (
 				<div className="body">
 					<Question questions={questions[currentQuestion]} />
-					<ResponseBtns nextQ={this.nextQuestion.bind(this)} />
+					<ResponseBtns nextQ={this.nextQuestion.bind(this)} prevQ={this.prevQuestion.bind(this)} />
 				</div>
 			);
 		}

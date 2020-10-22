@@ -17,7 +17,7 @@
     background-color: #191919;
     border-radius: 20px;
     padding: 20px;
-    width: 60%;
+    width: 50%;
 }
 
 .questionNum {
@@ -31,7 +31,7 @@
 @media screen and (max-width: 768px) {
     .questionContainer {
         padding: 1.75rem;
-        width: 95%;
+        width: 90%;
     }
     
     .question {
