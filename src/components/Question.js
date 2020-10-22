@@ -4,12 +4,17 @@ import "./Question.css";
 class Question extends Component {
     render() {
         const questions = this.props.questions;
-
+        
         return (
-            <div className="questionContainer">
-                <p className="question">
-                    {questions.question}
-                </p>                
+            <div className="mainContainer">
+                <div className="questionContainer">
+                    <p className="questionNum">
+                        {questions.num}
+                    </p>
+                    <p className="question">
+                        {questions.question}
+                    </p>      
+                </div>          
             </div>
         );
     }

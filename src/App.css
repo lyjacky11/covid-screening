@@ -1,9 +1,19 @@
+body {
+    background-color:#232323;
+}
+
 .logoContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .logo {
-    height: 200px;
+	height: 200px;
+}
+
+@media screen and (max-width: 768px) {
+	.logo {
+		height: 150px;
+	}
 }

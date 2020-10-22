@@ -2,5 +2,13 @@
     text-align: center;
     padding: 2rem;
     font-size: 2rem;
+    font-weight: bold;
     overflow: hidden;
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        font-size: 1.75rem;
+    }
 }

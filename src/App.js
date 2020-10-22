@@ -9,7 +9,7 @@ import Footer from './components/Footer.js';
 class App extends Component {
 	render () {
 		return (
-      <div>
+      <div className="appContainer">
         <Header></Header>
         <div className="logoContainer">
           <img className="logo" src={logo} alt="Logo"></img>
