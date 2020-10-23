@@ -5,36 +5,12 @@ import "./Footer.css";
 
 class Footer extends Component {
     
-    /*
-    checkTheme() {
-        if (localStorage.getItem("theme") === "light") {
-            this.changeTheme();
-        }
-        console.log("Check theme");
-    }
-    */
-
-    changeTheme() {
-        document.querySelector(".header").classList.toggle("light");
-        document.querySelector("body").classList.toggle("light");
-        document.querySelector(".questionContainer").classList.toggle("light");
-        document.querySelector(".themeBtn").classList.toggle("light");
-        document.querySelector(".footer p").classList.toggle("light");
-
-        /*
-        if (document.querySelector("body").classList.contains("light")) {
-            localStorage.setItem("theme", "light");
-        }
-        else {
-            localStorage.removeItem("theme");
-        }
-        */
-    }
-
     render() {
+        const { changeTheme } = this.props;
+        
         return (
             <footer className="footer">
-                <FontAwesomeIcon className="themeBtn" onClick={this.changeTheme} icon={faAdjust} size="2x"></FontAwesomeIcon>
+                <FontAwesomeIcon className="themeBtn" onClick={changeTheme} icon={faAdjust} size="2x"></FontAwesomeIcon>
                 <p>© Copyright <script>document.write(new Date().getFullYear())</script>2020, <a href="https://github.com/lyjacky11" target="_blank" rel="noopener noreferrer"><b>Jacky Ly</b></a> <br /><br /> Written in React.JS</p>
             </footer>
         );

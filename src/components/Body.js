@@ -75,11 +75,13 @@ class Body extends Component {
 
 	render () {
 		const { currentQuestion, questions } = this.state;
+		const { theme } = this.props;
+
 		const numQuestions = questions.length;
 		if (currentQuestion === 0) {
 			return (
 				<div className="body">
-					<Question questions={questions[currentQuestion]} />
+					<Question theme={theme} questions={questions[currentQuestion]} />
 					<div className="responseBtns">
 						<button value="Next" onClick={this.nextQuestion}>Next</button>
 					</div>
@@ -89,7 +91,7 @@ class Body extends Component {
 		else if (currentQuestion < numQuestions) {
 			return (
 				<div className="body">
-					<Question questions={questions[currentQuestion]} />
+					<Question theme={theme} questions={questions[currentQuestion]} />
 					<ResponseBtns nextQ={this.nextQuestion.bind(this)} prevQ={this.prevQuestion.bind(this)} />
 				</div>
 			);
@@ -98,7 +100,7 @@ class Body extends Component {
 			return (
 				<div className="body">
 					<FontAwesomeIcon icon={faTimesCircle} size="6x" color="red" />
-					<Question questions={{num: "Result:", question: "You may have possibly come in contact with COVID-19. Please visit a local testing centre as soon as possible!"}} />
+					<Question theme={theme} questions={{num: "Result:", question: "You may have possibly come in contact with COVID-19. Please visit a local testing centre as soon as possible!"}} />
 					
 					<div className="responseBtns">
 						<button value="Restart" onClick={this.resetState}>Restart</button>
@@ -110,7 +112,7 @@ class Body extends Component {
 			return (
 				<div className="body">
 					<FontAwesomeIcon icon={faCheckCircle} size="6x" color="green" />
-					<Question questions={{num: "Result:", question: "You don't appear to have symptoms of COVID-19. Please continue to wear a face mask and maintain social distancing!"}} />
+					<Question theme={theme} questions={{num: "Result:", question: "You don't appear to have symptoms of COVID-19. Please continue to wear a face mask and maintain social distancing!"}} />
 					
 					<div className="responseBtns">
 						<button value="Restart" onClick={this.resetState}>Restart</button>

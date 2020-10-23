@@ -2,12 +2,14 @@ import React, { Component } from "react";
 import "./Question.css";
 
 class Question extends Component {
+    
     render() {
-        const questions = this.props.questions;
-        
+        const { questions, theme } = this.props;
+        const questionContainer = `questionContainer ${theme}`
+
         return (
             <div className="mainContainer">
-                <div className="questionContainer">
+                <div className={questionContainer}>
                     <p className="questionNum">
                         {questions.num}
                     </p>
