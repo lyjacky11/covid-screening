@@ -1,3 +1,8 @@
+.light {
+	background-color:#FFFFFF;
+	color: black;
+}
+
 .footer {
     text-align: center;
     overflow: hidden;
@@ -7,6 +12,10 @@
 
 .footer p {
     font-size: 1.05rem;
+}
+
+.themeBtn:hover {
+    cursor: pointer;
 }
 
 a {
