@@ -18,18 +18,28 @@ class Body extends Component {
 					response : null
 				},
 				{
-					num: "Question 1 of 3:",
-					question : "Do you have any of the following new or worsening symptoms: Fever, Cough, Difficulty breathing, Sore throat, Loss of taste or smell, Nausea, vomiting or diarrhea?",
+					num: "Question 1 of 5:",
+					question : "Are you experiencing any of these symptoms? Fever, Cough, Difficulty breathing, Sore throat, Loss of taste or smell, Nausea, Extreme tiredness",
 					response : null
 				},
 				{
-					num: "Question 2 of 3:",
-					question : "Have you been in close contact with someone who is confirmed COVID-19 or probable (symptoms + exposure) in the past 14 days without wearing appropriate PPE?",
+					num: "Question 2 of 5:",
+					question : "In the last 14 days, have you been in close physical contact with someone who has recently tested positive for COVID-19?",
 					response : null
 				},
 				{
-					num: "Question 3 of 3:",
-					question: "Have you returned from travel outside Canada in the past 14 days?",
+					num: "Question 3 of 5:",
+					question: "In the last 14 days, have you been in close physical contact with someone has symptoms related to COVID-19? ",
+					response: null
+				},
+				{
+					num: "Question 4 of 5:",
+					question: "In the last 14 days, have you been in close physical contact with someone who has returned from outside of Canada in the last 2 weeks?",
+					response: null
+				},
+				{
+					num: "Question 5 of 5:",
+					question: "Have you travelled outside of Canada in the last 14 days?",
 					response: null
 				}
 			]
