@@ -16,6 +16,9 @@ class Question extends Component {
                     <p className="question">
                         {questions.question}
                     </p>
+                    <p className="link">
+                        <a href={questions.link} target="_blank" rel="noopener noreferrer">{questions.link}</a>
+                    </p>
                 </div>
             </div>
         );

@@ -110,8 +110,7 @@ class Body extends Component {
 			return (
 				<div className="body">
 					<FontAwesomeIcon icon={faTimesCircle} size="6x" color="red" />
-					<Question theme={theme} questions={{num: "Result:", question: "You may have possibly come in contact with COVID-19. Please visit a local testing centre as soon as possible!"}} />
-					
+					<Question theme={theme} questions={{num: "Result:", question: "You may have possibly come in contact with COVID-19. Please visit a local testing centre as soon as possible!", link: "https://covid-19.ontario.ca/assessment-centre-locations/"}} />
 					<div className="responseBtns">
 						<button value="Restart" onClick={this.resetState}>Restart</button>
 					</div>
