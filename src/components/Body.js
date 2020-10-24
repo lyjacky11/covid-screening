@@ -15,32 +15,26 @@ class Body extends Component {
 				{
 					num: "Welcome to the COVID Screening App!",
 					question : "You will be asked a series of questions. Click \"Next\" to continue.",
-					response : null
 				},
 				{
-					num: "Question 1 of 5:",
+					num: 1,
 					question : "Are you experiencing any of these symptoms? Fever, Cough, Difficulty breathing, Sore throat, Loss of taste or smell, Nausea, Extreme tiredness",
-					response : null
 				},
 				{
-					num: "Question 2 of 5:",
+					num: 2,
 					question : "In the last 14 days, have you been in close physical contact with someone who has recently tested positive for COVID-19?",
-					response : null
 				},
 				{
-					num: "Question 3 of 5:",
+					num: 3,
 					question: "In the last 14 days, have you been in close physical contact with someone has symptoms related to COVID-19? ",
-					response: null
 				},
 				{
-					num: "Question 4 of 5:",
+					num: 4,
 					question: "In the last 14 days, have you been in close physical contact with someone who has returned from outside of Canada in the last 2 weeks?",
-					response: null
 				},
 				{
-					num: "Question 5 of 5:",
+					num: 5,
 					question: "Have you travelled outside of Canada in the last 14 days?",
-					response: null
 				}
 			]
 		};
@@ -52,10 +46,8 @@ class Body extends Component {
 	}
 
 	prevQuestion = () => {
-		const { currentQuestion, questions } = this.state;
-		const numQuestions = questions.length;
-
-		if (currentQuestion < numQuestions) {
+		const { currentQuestion } = this.state;
+		if (currentQuestion >= 0) {
 			this.setState( { currentQuestion: currentQuestion - 1 } );
 		}
 	}
@@ -68,6 +60,11 @@ class Body extends Component {
 		if (currentQuestion < numQuestions) {
 			var questionsList = questions;
 			questionsList[currentQuestion].response = userResponse;
+			
+			if ((currentQuestion + 1) < numQuestions) {
+				questionsList[currentQuestion + 1].num = `Question ${currentQuestion + 1} of ${numQuestions - 1}:`;
+			}
+			
 			this.setState( {questions: questionsList} );
 			this.setState( { currentQuestion: currentQuestion + 1 } );
 			// console.log(questions);
@@ -92,6 +89,7 @@ class Body extends Component {
 			return (
 				<div className="body">
 					<Question theme={theme} questions={questions[currentQuestion]} />
+					
 					<div className="responseBtns">
 						<button value="Next" onClick={this.nextQuestion}>Next</button>
 					</div>
@@ -102,7 +100,7 @@ class Body extends Component {
 			return (
 				<div className="body">
 					<Question theme={theme} questions={questions[currentQuestion]} />
-					<ResponseBtns nextQ={this.nextQuestion.bind(this)} prevQ={this.prevQuestion.bind(this)} />
+					<ResponseBtns prevQ={this.prevQuestion.bind(this)} nextQ={this.nextQuestion.bind(this)} />
 				</div>
 			);
 		}
@@ -111,6 +109,7 @@ class Body extends Component {
 				<div className="body">
 					<FontAwesomeIcon icon={faTimesCircle} size="6x" color="red" />
 					<Question theme={theme} questions={{num: "Result:", question: "You may have possibly come in contact with COVID-19. Please visit a local testing centre as soon as possible!", link: "https://covid-19.ontario.ca/assessment-centre-locations"}} />
+					
 					<div className="responseBtns">
 						<button value="Restart" onClick={this.resetState}>Restart</button>
 					</div>

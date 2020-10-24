@@ -3,7 +3,7 @@ import "./ResponseBtns.css";
 
 class ResponseBtns extends Component {
     render() {
-        const { nextQ, prevQ } = this.props;
+        const { prevQ, nextQ } = this.props;
         
         return (
             <div className="responseBtns">
@@ -13,7 +13,6 @@ class ResponseBtns extends Component {
                 <button value="Back" onClick={prevQ}>Back</button>
             </div>
         );
-            
     }
 }
 
