@@ -17,7 +17,7 @@ class App extends Component {
   componentDidMount() {
     const bodyTag = document.querySelector("body");
     const cachedTheme = localStorage.getItem("theme");
-
+    
     if (cachedTheme !== null) {
         bodyTag.classList.add("light");
         this.setState({theme: cachedTheme});
@@ -52,7 +52,7 @@ class App extends Component {
         <Header theme={theme}></Header>
 
         <div className="logoContainer">
-          <img className="logo" src={logo} alt="Logo"></img>
+          <img className="logo rotate" src={logo} alt="Logo"></img>
         </div>
 
         <Body theme={theme}></Body>

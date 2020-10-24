@@ -6,7 +6,9 @@ class Header extends Component {
         const { theme } = this.props;
 
         return (
-            <div className={`header ${theme}`}>COVID Screening App</div>
+            <div className={`header ${theme}`}>
+                COVID Screening App
+            </div>
         );
     }
 }

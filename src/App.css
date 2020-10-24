@@ -19,7 +19,32 @@
 
 .logo {
     height: 175px;
-    margin: 2rem;
+	margin: 2rem;
+}
+
+.rotate {
+	-webkit-animation: rotate 20s linear infinite;
+	-moz-animation: rotate 20s linear infinite;
+	animation: rotate 20s linear infinite;
+  }
+
+@-webkit-keyframes rotate {
+	100% {
+		-webkit-transform: rotate(1turn);
+	}
+}
+
+@-moz-keyframes rotate {
+	100% {
+		-moz-transform: rotate(1turn);
+	}
+}
+
+@keyframes rotate {
+	100% {
+		-webkit-transform: rotate(1turn);
+		transform: rotate(1turn);
+	}
 }
 
 @media screen and (max-width: 768px) {

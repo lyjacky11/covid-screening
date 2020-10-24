@@ -18,7 +18,7 @@ class Body extends Component {
 				},
 				{
 					num: 1,
-					question : "Are you experiencing any of these symptoms? Fever, Cough, Difficulty breathing, Sore throat, Loss of taste or smell, Nausea, Extreme tiredness",
+					question : "Are you experiencing any of these symptoms: Fever, Cough, Difficulty breathing, Sore throat, Loss of taste/smell, Nausea, or Extreme tiredness?",
 				},
 				{
 					num: 2,
@@ -34,7 +34,7 @@ class Body extends Component {
 				},
 				{
 					num: 5,
-					question: "Have you travelled outside of Canada in the last 14 days?",
+					question: "Have you travelled and returned from outside of Canada in the last 14 days?",
 				}
 			]
 		};
@@ -62,11 +62,14 @@ class Body extends Component {
 			questionsList[currentQuestion].response = userResponse;
 			
 			if ((currentQuestion + 1) < numQuestions) {
-				questionsList[currentQuestion + 1].num = `Question ${currentQuestion + 1} of ${numQuestions - 1}:`;
+				var nextObj = questionsList[currentQuestion + 1];
+				nextObj.num = `Question ${currentQuestion + 1} of ${numQuestions - 1}:`;
 			}
 			
-			this.setState( {questions: questionsList} );
-			this.setState( { currentQuestion: currentQuestion + 1 } );
+			this.setState({
+				questions: questionsList,
+				currentQuestion: currentQuestion + 1
+			});
 			// console.log(questions);
 		}
 	}
