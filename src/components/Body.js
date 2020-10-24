@@ -113,7 +113,7 @@ class Body extends Component {
 			return (
 				<div className="body">
 					<FontAwesomeIcon icon={faTimesCircle} size="6x" color="red" />
-					<Question theme={theme} questions={{num: "Result:", question: "You may have possibly come in contact with COVID-19. Please visit a local testing centre as soon as possible!", link: "https://covid-19.ontario.ca/assessment-centre-locations"}} />
+					<Question theme={theme} questions={{num: "Result:", question: "You may have symptoms or were in close contact with someone who has COVID-19. Please visit a local assessment centre as soon as possible!", link: "https://covid-19.ontario.ca/assessment-centre-locations"}} />
 					
 					<div className="responseBtns">
 						<button value="Restart" onClick={this.resetState}>Restart</button>
@@ -121,12 +121,12 @@ class Body extends Component {
 				</div>
 			);
 		}
-
+		
 		else if (!this.hasCOVID()) {
 			return (
 				<div className="body">
 					<FontAwesomeIcon icon={faCheckCircle} size="6x" color="green" />
-					<Question theme={theme} questions={{num: "Result:", question: "You don't appear to have symptoms of COVID-19. Please continue to wear a face mask and maintain social distancing!", link: "https://covid-19.ontario.ca"}} />
+					<Question theme={theme} questions={{num: "Result:", question: "You don't appear to have symptoms and have a low risk of COVID-19. Please continue to wear a face mask, wash your hands and maintain social distancing!", link: "https://covid-19.ontario.ca"}} />
 					
 					<div className="responseBtns">
 						<button value="Restart" onClick={this.resetState}>Restart</button>
