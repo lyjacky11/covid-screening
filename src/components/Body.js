@@ -14,7 +14,7 @@ class Body extends Component {
 			questions       : [
 				{
 					num: "Welcome to the COVID Screening App!",
-					question : "You will be asked a series of questions. Click \"Next\" to continue.",
+					question : "You will be asked a series of screening questions. Click Next to continue.",
 				},
 				{
 					num: 1,
@@ -83,8 +83,8 @@ class Body extends Component {
 	render () {
 		const { currentQuestion, questions } = this.state;
 		const { theme } = this.props;
-
 		const numQuestions = questions.length;
+
 		if (currentQuestion === 0) {
 			return (
 				<div className="body">
@@ -96,6 +96,7 @@ class Body extends Component {
 				</div>
 			);
 		}
+
 		else if (currentQuestion < numQuestions) {
 			return (
 				<div className="body">
@@ -104,6 +105,7 @@ class Body extends Component {
 				</div>
 			);
 		}
+
 		else if (this.hasCOVID()) {
 			return (
 				<div className="body">
@@ -116,6 +118,7 @@ class Body extends Component {
 				</div>
 			);
 		}
+
 		else if (!this.hasCOVID()) {
 			return (
 				<div className="body">
@@ -128,7 +131,6 @@ class Body extends Component {
 				</div>
 			);
 		}
-		
 	}
 }
 

@@ -4,10 +4,9 @@ import "./Header.css";
 class Header extends Component {
     render() {
         const { theme } = this.props;
-        const headerClass = `header ${theme}`;
 
         return (
-            <div className={headerClass}>COVID Screening App</div>
+            <div className={`header ${theme}`}>COVID Screening App</div>
         );
     }
 }

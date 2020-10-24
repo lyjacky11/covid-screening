@@ -5,11 +5,10 @@ class Question extends Component {
     
     render() {
         const { questions, theme } = this.props;
-        const questionContainer = `questionContainer ${theme}`
 
         return (
             <div className="mainContainer">
-                <div className={questionContainer}>
+                <div className={`questionContainer ${theme}`}>
                     <p className="questionNum">
                         {questions.num}
                     </p>
