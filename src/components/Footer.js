@@ -6,12 +6,14 @@ import "./Footer.css";
 class Footer extends Component {
     
     render() {
-        const { changeTheme } = this.props;
+        const { theme, changeTheme } = this.props;
+        const footerClass = `footer ${theme}`;
+        const themeBtn = `themeBtn ${theme}`;
         
         return (
-            <footer className="footer">
-                <FontAwesomeIcon className="themeBtn" onClick={changeTheme} icon={faAdjust} size="2x"></FontAwesomeIcon>
-                <p>© Copyright <script>document.write(new Date().getFullYear())</script>2020, <a href="https://github.com/lyjacky11" target="_blank" rel="noopener noreferrer"><b>Jacky Ly</b></a> <br /><br /> Written in React.JS</p>
+            <footer className={footerClass}>
+                <FontAwesomeIcon className={themeBtn} onClick={changeTheme} icon={faAdjust} size="2x"></FontAwesomeIcon>
+                <p className={theme}>© Copyright <script>document.write(new Date().getFullYear())</script>2020, <a href="https://github.com/lyjacky11" target="_blank" rel="noopener noreferrer"><b>Jacky Ly</b></a> <br /><br /> Written in React.JS</p>
             </footer>
         );
     }

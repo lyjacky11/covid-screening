@@ -14,20 +14,33 @@ class App extends Component {
       }
   }
 
-  changeTheme = () => {
-    const { theme } = this.state;
-  
-    document.querySelector(".header").classList.toggle("light");
-    document.querySelector("body").classList.toggle("light");
-    document.querySelector(".questionContainer").classList.toggle("light");
-    document.querySelector(".themeBtn").classList.toggle("light");
-    document.querySelector(".footer p").classList.toggle("light");
-    
-    if (theme === "") {
-        this.setState({theme: "light"});
+  componentDidMount() {
+    const bodyTag = document.querySelector("body");
+    const cachedTheme = localStorage.getItem("theme");
+
+    if (cachedTheme !== null) {
+        bodyTag.classList.add("light");
+        this.setState({theme: cachedTheme});
     }
     else {
+        bodyTag.classList.remove("light");
+        //this.setState({theme: ""});
+    }
+  }
+
+  changeTheme = () => {
+    const { theme } = this.state;
+    const bodyTag = document.querySelector("body");
+    
+    if (theme === "") {
+        bodyTag.classList.add("light");
+        this.setState({theme: "light"});
+        localStorage.setItem("theme", "light");
+    }
+    else {
+        bodyTag.classList.remove("light");
         this.setState({theme: ""});
+        localStorage.removeItem("theme");
     }
   }
 
@@ -36,12 +49,14 @@ class App extends Component {
     
 		return (
       <div className="appContainer">
-        <Header></Header>
+        <Header theme={theme}></Header>
+
         <div className="logoContainer">
           <img className="logo" src={logo} alt="Logo"></img>
         </div>
+
         <Body theme={theme}></Body>
-        <Footer changeTheme={this.changeTheme}></Footer>
+        <Footer theme={theme} changeTheme={this.changeTheme}></Footer>
       </div>
     );
 	}

@@ -20,6 +20,10 @@
     width: 50%;
 }
 
+.questionContainer.light {
+    background-color: #F8F8F8;
+}
+
 .questionNum {
     font-weight: bold;
 }
