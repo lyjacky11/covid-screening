@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faRedoAlt, faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { Question, ResponseBtns } from '../';
 import "./Body.css";
 
@@ -12,7 +12,7 @@ class Body extends Component {
 			questions       : [
 				{
 					num: "Welcome to the COVID Screening App!",
-					question : "You will be asked a series of screening questions. Click Next to continue.",
+					question : "You will be asked a series of COVID-19 screening questions. Click on the arrow below to get started.",
 				},
 				{
 					num: 1,
@@ -68,7 +68,6 @@ class Body extends Component {
 				questions: questionsList,
 				currentQuestion: currentQuestion + 1
 			});
-			// console.log(questions);
 		}
 	}
 
@@ -92,7 +91,7 @@ class Body extends Component {
 					<Question theme={theme} questions={questions[currentQuestion]} />
 					
 					<div className="responseBtns">
-						<button value="Next" onClick={this.nextQuestion}>Next</button>
+						<button value="Next" onClick={this.nextQuestion}><FontAwesomeIcon icon={faArrowRight} size="2x" /></button>
 					</div>
 				</div>
 			);
@@ -114,7 +113,7 @@ class Body extends Component {
 					<Question theme={theme} questions={{num: "Result:", question: "You may have symptoms or were in close contact with someone who has COVID-19. Please visit a local assessment centre as soon as possible!", link: "https://covid-19.ontario.ca/assessment-centre-locations"}} />
 					
 					<div className="responseBtns">
-						<button value="Restart" onClick={this.resetState}>Restart</button>
+						<button value="Restart" onClick={this.resetState}><FontAwesomeIcon icon={faRedoAlt} size="2x" /></button>
 					</div>
 				</div>
 			);
@@ -127,7 +126,7 @@ class Body extends Component {
 					<Question theme={theme} questions={{num: "Result:", question: "You don't appear to have symptoms and have a low risk of COVID-19. Please continue to wear a face mask, wash your hands and maintain social distancing!", link: "https://covid-19.ontario.ca"}} />
 					
 					<div className="responseBtns">
-						<button value="Restart" onClick={this.resetState}>Restart</button>
+						<button value="Restart" onClick={this.resetState}><FontAwesomeIcon icon={faRedoAlt} size="2x" /></button>
 					</div>
 				</div>
 			);
