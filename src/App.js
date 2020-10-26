@@ -1,10 +1,7 @@
 import React, {Component} from "react";
+import { Header, Body, Footer } from './components';
 import logo from "./covid-19.png";
 import "./App.css";
-
-import Header from './components/Header.js';
-import Body from './components/Body.js';
-import Footer from './components/Footer.js';
 
 class App extends Component {
   constructor (props) {

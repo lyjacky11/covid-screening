@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
-
+import { Question, ResponseBtns } from '../';
 import "./Body.css";
-import Question from "./Question.js";
-import ResponseBtns from "./ResponseBtns.js";
 
 class Body extends Component {
 	constructor (props) {
@@ -108,7 +106,7 @@ class Body extends Component {
 				</div>
 			);
 		}
-
+		
 		else if (this.hasCOVID()) {
 			return (
 				<div className="body">

@@ -11,11 +11,9 @@ body {
     -moz-osx-font-smoothing: grayscale;
     background-color:#232323;
     text-align: center;
-    /*
-    -webkit-transition: 300ms ease-in-out;
-    -moz-transition: 300ms ease-in-out;
-    transition: 300ms ease-in-out;
-    */
+    -webkit-transition: 250ms ease-in-out;
+    -moz-transition: 250ms ease-in-out;
+    transition: 250ms ease-in-out;
 }
 
 code {
