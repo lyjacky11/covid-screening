@@ -1,5 +1,19 @@
 [{
       "relation": ["delegate_permission/common.handle_all_urls"],
-      "target" : { "namespace": "android_app", "package_name": "ca.jackyly.covidapp",
-                   "sha256_cert_fingerprints": ["C9:DE:66:E3:84:F0:1A:1E:E7:18:39:C2:96:4F:6D:73:B5:12:27:52:27:00:F0:DF:04:50:9A:F0:27:36:BA:31"] }
-    }]
+      "target" : {
+            "namespace": "android_app",
+            "package_name": "ca.jackyly.covidapp",
+            "sha256_cert_fingerprints": [
+                  "C9:DE:66:E3:84:F0:1A:1E:E7:18:39:C2:96:4F:6D:73:B5:12:27:52:27:00:F0:DF:04:50:9A:F0:27:36:BA:31"
+            ]
+      }
+},{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target" : {
+            "namespace": "android_app",
+            "package_name": "ca.jackyly.covidapp",
+            "sha256_cert_fingerprints": [
+                  "7F:A1:85:C4:89:FA:5D:4D:FF:EF:65:EA:D8:56:CC:62:4D:56:64:C6:00:61:A2:06:04:05:BB:85:3A:27:84:DE"
+            ]
+      }
+}]
